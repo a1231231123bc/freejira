@@ -1,0 +1,13 @@
+node_modules/
+dist/
+editions/sites/node_modules/
+editions/sites/dist/
+editions/sites/vendor/
+editions/sites/drizzle/meta/
+**/package-lock.json
+**/.openai/hosting.json
+**/.wrangler/
+**/.sites-runtime/
+**/next-env.d.ts
+test-results/
+playwright-report/

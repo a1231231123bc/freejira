@@ -1,0 +1,60 @@
+{
+  "name": "freejira",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --import tsx --watch server/index.ts",
+    "build": "tsc --noEmit && vite build",
+    "start": "NODE_ENV=production node --env-file-if-exists=.env --import tsx server/index.ts",
+    "test": "tsx --test tests/*.test.ts",
+    "mcp": "tsx server/stdio.ts",
+    "check": "tsc --noEmit",
+    "backup": "node --env-file-if-exists=.env --import tsx scripts/backup.ts",
+    "test:ui": "playwright test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@fontsource/golos-text": "^5.3.0",
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tsx": "^4.20.6",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^6.0.0",
+    "prettier": "3.9.10",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.5"
+  },
+  "description": "Shared project management for small teams, with MCP and a self-hosted SQLite edition.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a1231231123bc/freejira.git"
+  },
+  "bugs": {
+    "url": "https://github.com/a1231231123bc/freejira/issues"
+  },
+  "homepage": "https://github.com/a1231231123bc/freejira#readme",
+  "keywords": [
+    "project-management",
+    "kanban",
+    "mcp",
+    "self-hosted"
+  ]
+}

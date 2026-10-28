@@ -1,0 +1,14 @@
+node_modules
+dist
+data
+backups
+.git
+.env
+.env.*
+test-results
+playwright-report
+*.log
+
+editions
+docs
+.github

@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 6000
+    },
+    "screens": {
+      "maxItems": 60,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string",
+            "pattern": "^\\d{2}:[0-5]\\d$"
+          },
+          "frame": {
+            "type": "string",
+            "pattern": "^f_\\d{4}\\.jpg$"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 3000
+          }
+        },
+        "required": ["time", "frame", "description"],
+        "additionalProperties": false
+      }
+    },
+    "tasks": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^T[1-9]\\d*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240
+          },
+          "type": {
+            "type": "string",
+            "enum": ["bug", "feature", "change", "data", "question", "other"]
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 12000
+          },
+          "acceptance_criteria": {
+            "maxItems": 40,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            }
+          },
+          "location": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "time": {
+            "type": "string",
+            "pattern": "^\\d{2}:[0-5]\\d$"
+          },
+          "frames": {
+            "maxItems": 60,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^f_\\d{4}\\.jpg$"
+            }
+          },
+          "quote": {
+            "type": "string",
+            "maxLength": 6000
+          },
+          "assignee": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "due": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "type",
+          "priority",
+          "description",
+          "acceptance_criteria",
+          "location",
+          "time",
+          "frames",
+          "quote",
+          "assignee",
+          "due",
+          "confidence"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "open_questions": {
+      "maxItems": 60,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 1000
+      }
+    },
+    "entities": {
+      "maxItems": 200,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 500
+      }
+    }
+  },
+  "required": ["title", "summary", "screens", "tasks", "open_questions", "entities"],
+  "additionalProperties": false
+}

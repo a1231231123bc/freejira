@@ -1,0 +1,14 @@
+services:
+  freejira:
+    build: .
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:4173:4173'
+    environment:
+      PUBLIC_URL: ${PUBLIC_URL:-http://localhost:4173}
+      SECURE_COOKIES: ${SECURE_COOKIES:-false}
+      TRUST_PROXY: ${TRUST_PROXY:-0}
+    volumes:
+      - freejira_data:/app/data
+volumes:
+  freejira_data:
