@@ -78,7 +78,7 @@ npx playwright install chromium
 npm run test:ui
 ```
 
-Tests use temporary databases and synthetic accounts. CI runs API/MCP tests and builds on Node 24 and 26, browser tests on Node 24, plus Sites contract and video processor unit tests. Docker and hosted Sites deployment have separate environment requirements; a green unit test does not prove either deployment works.
+Tests use temporary databases and synthetic accounts. CI runs API/MCP tests and builds on Node 24 and 26, browser tests on Node 24, Docker build/start/health checks, plus Sites contract and video processor unit tests. A hosted Sites deployment still requires separate platform access and validation.
 
 | Directory         | Purpose                                                     |
 | ----------------- | ----------------------------------------------------------- |
