@@ -38,7 +38,7 @@
     "@types/react-dom": "^19.2.2",
     "@vitejs/plugin-react": "^6.0.0",
     "prettier": "3.9.10",
-    "typescript": "^5.9.3",
+    "typescript": "^7.0.2",
     "vite": "^8.3.5"
   },
   "description": "Shared project management for small teams, with MCP and a self-hosted SQLite edition.",
